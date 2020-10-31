@@ -1,0 +1,27 @@
+html {
+    min-height: 100vh;
+    background-color: #ddf2f4;
+}
+
+body {
+    padding-top: 74px;
+}
+
+.main-content {
+    padding-top: 80px;
+}
+
+.l-container-1080 {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.l-container-full-screen {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .l-container-1080 {
+        max-width: 90%;
+    }
+}

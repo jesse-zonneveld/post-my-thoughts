@@ -1,0 +1,12 @@
+@use 'variables';
+
+html {
+    font-size: 17px;
+}
+
+body {
+    font-family: $main-font;
+    color: $font-color-grey;
+    line-height: 2rem;
+    font-weight: 400;
+}
