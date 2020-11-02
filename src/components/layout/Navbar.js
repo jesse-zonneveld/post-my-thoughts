@@ -12,7 +12,7 @@ const Navbar = ({ auth, profile }) => {
     );
     return (
         <nav className="main-nav">
-            <Link to="/post-my-thoughts">
+            <Link to="/post-my-thoughts/">
                 <div className="logo">
                     PostMy<strong>Thoughts</strong>
                 </div>
@@ -23,7 +23,6 @@ const Navbar = ({ auth, profile }) => {
 };
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         auth: state.firebase.auth,
         profile: state.firebase.profile,

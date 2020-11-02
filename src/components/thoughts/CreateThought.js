@@ -25,31 +25,39 @@ class CreateThought extends Component {
         if (!auth.uid) return <Redirect to="/post-my-thoughts/login" />;
 
         return (
-            <div className="login">
-                <form
-                    onSubmit={this.handleSubmit.bind(this)}
-                    className="login-form"
-                >
-                    <div className="thought-title-container">
-                        <label htmlFor="title">Title</label>
-                        <input
-                            type="text"
-                            id="title"
-                            className="thought-title-input"
-                            placeholder="My New Thought"
-                            onChange={this.handleChange.bind(this)}
-                        />
+            <div className="create-thought l-container-full-screen">
+                <div className="l-container-full-screen filter-white">
+                    <div className="l-container-1080">
+                        <form
+                            onSubmit={this.handleSubmit.bind(this)}
+                            className="create-thought-form"
+                        >
+                            <h2 className="form-title">Create New Thought</h2>
+                            <div className="thought-title-container form-box">
+                                <input
+                                    type="text"
+                                    id="title"
+                                    className="thought-title-input"
+                                    onChange={this.handleChange.bind(this)}
+                                    placeholder=" "
+                                    required
+                                />
+                                <label htmlFor="title">Title</label>
+                            </div>
+                            <div className="thought-content-container form-box">
+                                <textarea
+                                    id="content"
+                                    className="thought-content-input"
+                                    onChange={this.handleChange.bind(this)}
+                                    required
+                                    placeholder=" "
+                                ></textarea>
+                                <label htmlFor="content">Content</label>
+                            </div>
+                            <button className="login-btn">Create</button>
+                        </form>
                     </div>
-                    <div className="thought-content-container">
-                        <label htmlFor="content">Content</label>
-                        <textarea
-                            id="content"
-                            className="thought-content-input"
-                            onChange={this.handleChange.bind(this)}
-                        ></textarea>
-                    </div>
-                    <button className="login-btn">Create</button>
-                </form>
+                </div>
             </div>
         );
     }

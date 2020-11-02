@@ -13,7 +13,6 @@ class Login extends Component {
         this.setState({
             [e.target.id]: e.target.value,
         });
-        console.log(e.target.id, e.target.value);
     }
 
     handleSubmit(e) {
@@ -25,31 +24,41 @@ class Login extends Component {
         if (auth.uid) return <Redirect to="/post-my-thoughts/" />;
 
         return (
-            <div className="login">
-                <form
-                    onSubmit={this.handleSubmit.bind(this)}
-                    className="login-form"
-                >
-                    <div className="login-username-container">
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="email@test.ca"
-                            onChange={this.handleChange.bind(this)}
-                        />
+            <div className="login l-container-full-screen">
+                <div className="l-container-full-screen filter-white">
+                    <div className="l-container-1080">
+                        <form
+                            onSubmit={this.handleSubmit.bind(this)}
+                            className="login-form"
+                        >
+                            <h2 className="login-title">Login</h2>
+                            <div className="login-username-container form-box">
+                                <input
+                                    type="email"
+                                    id="email"
+                                    onChange={this.handleChange.bind(this)}
+                                    placeholder=" "
+                                    required
+                                />
+                                <label htmlFor="email">Email</label>
+                            </div>
+                            <div className="login-password-container form-box">
+                                <input
+                                    type="password"
+                                    id="password"
+                                    onChange={this.handleChange.bind(this)}
+                                    placeholder=" "
+                                    required
+                                />
+                                <label htmlFor="password">Password</label>
+                            </div>
+                            <button className="login-btn">Login</button>
+                            {authError ? (
+                                <div className="error-message">{authError}</div>
+                            ) : null}
+                        </form>
                     </div>
-                    <div className="login-password-container">
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            onChange={this.handleChange.bind(this)}
-                        />
-                    </div>
-                    <button className="login-btn">Login</button>
-                    {authError ? <div>{authError}</div> : null}
-                </form>
+                </div>
             </div>
         );
     }

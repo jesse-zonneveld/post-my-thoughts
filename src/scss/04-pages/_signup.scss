@@ -1,0 +1,109 @@
+.signup.l-container-full-screen {
+    background-image: url("../../images/library.jpg");
+    background-size: cover;
+    min-height: 100vh;
+
+    .l-container-full-screen.filter-white {
+        padding-top: 150px;
+        min-height: 100vh;
+    }
+
+    .l-container-1080 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.signup-form h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: black;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+
+.signup-form .form-box {
+    position: relative;
+    width: 100%;
+}
+
+.signup-form .form-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: transparent;
+    transition: all 0.3s;
+}
+.signup-form .form-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.signup-form .form-box input:focus ~ label,
+.signup-form .form-box input:not(:placeholder-shown) ~ label {
+    top: -30px;
+    left: 0;
+    color: #0392cf;
+    font-size: 12px;
+}
+
+.signup-form .form-box input:focus {
+    border-color: #0392cf;
+}
+
+.signup-btn {
+    padding: 15px 40px;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.637);
+    font-size: 1rem;
+    transition: all 0.3s;
+    color: rgba(0, 0, 0, 0.726);
+
+    &:hover {
+        border-color: #0392cf;
+        cursor: pointer;
+        background-color: #0392cf0e;
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.error-message {
+    margin-top: 20px;
+    color: #ee4035;
+}

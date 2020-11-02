@@ -4,23 +4,22 @@ import moment from "moment";
 const Notifications = ({ notifications }) => {
     return (
         <div className="notifications">
-            <div>Notifications</div>
+            <h2 className="notifications-title">Notifications</h2>
             <ul className="notifications-container">
                 {notifications &&
                     notifications.map((notification) => {
                         return (
                             <li className="notification" key={notification.id}>
-                                <div className="notification-user">
-                                    {notification.user}
-                                </div>
-                                <div className="notification-content">
-                                    {notification.content}
-                                </div>
-                                <div className="notification-date">
+                                <span className="notification-user">
+                                    {notification.user}&nbsp;
+                                </span>
+                                {notification.content}&nbsp;
+                                <span className="notification-date">
+                                    &nbsp; --- &nbsp;
                                     {moment(
                                         notification.time.toDate()
                                     ).fromNow()}
-                                </div>
+                                </span>
                             </li>
                         );
                     })}

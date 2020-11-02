@@ -11,7 +11,7 @@ const thoughtReducer = (state = initState, action) => {
         case "CREATE_THOUGHT":
             console.log("created thought", action.thought);
             return state;
-        case "CREATE_THOUGHT ERROR":
+        case "CREATE_THOUGHT_ERROR":
             console.log("created thought error", action.err);
             return state;
 

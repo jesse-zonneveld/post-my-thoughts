@@ -1,0 +1,163 @@
+.create-thought.l-container-full-screen {
+    background-image: url("../../images/library.jpg");
+    background-size: cover;
+    min-height: 100vh;
+
+    .l-container-full-screen.filter-white {
+        padding-top: 150px;
+        min-height: 100vh;
+    }
+
+    .l-container-1080 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+}
+
+.create-thought-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.create-thought-form h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: black;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 3rem;
+}
+
+.create-thought-form .form-box {
+    position: relative;
+    width: 100%;
+}
+
+.create-thought-form .form-box input,
+.create-thought-form .form-box textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: transparent;
+    transition: all 0.3s;
+}
+.create-thought-form .form-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.create-thought-form .form-box input:focus ~ label,
+.create-thought-form .form-box input:not(:placeholder-shown) ~ label,
+.create-thought-form .form-box textarea:focus ~ label,
+.create-thought-form .form-box textarea:not(:placeholder-shown) ~ label {
+    top: -30px;
+    left: 0;
+    color: #0392cf;
+    font-size: 12px;
+}
+
+.create-thought-form .form-box input:focus,
+.create-thought-form .form-box textarea:focus {
+    border-color: #0392cf;
+}
+
+.create-thought-form .thought-content-container.form-box {
+    label {
+        top: 18px;
+    }
+
+    textarea {
+        min-height: 0;
+        background-color: transparent;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        &::-webkit-scrollbar {
+            width: 12px;
+            background-color: #f5f5f5;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: rgba(85, 85, 85, 0.74);
+        }
+
+        &:focus {
+            outline: none;
+            min-height: 100px;
+            transform: translateY(10px);
+            border: 1px solid #0392cf;
+        }
+
+        &:not(:placeholder-shown) {
+            min-height: 100px;
+            transform: translateY(10px);
+            border: 1px solid black;
+
+            &:focus {
+                border: 1px solid #0392cf;
+            }
+        }
+    }
+}
+
+.create-thought-btn {
+    padding: 10px 40px;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.637);
+    font-size: 1rem;
+    transition: all 0.3s;
+    color: rgba(0, 0, 0, 0.726);
+
+    &:hover {
+        border-color: #0392cf;
+        cursor: pointer;
+        background-color: #0392cf0e;
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.error-message {
+    margin-top: 20px;
+    color: #ee4035;
+}
+
+@media only screen and (max-width: 600px) {
+    .create-thought-form {
+        width: 90%;
+    }
+}

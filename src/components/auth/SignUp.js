@@ -15,7 +15,6 @@ class SignUp extends Component {
         this.setState({
             [e.target.id]: e.target.value,
         });
-        console.log(e.target.id, e.target.value);
     }
 
     handleSubmit(e) {
@@ -26,49 +25,64 @@ class SignUp extends Component {
         const { auth, authError } = this.props;
         if (auth.uid) return <Redirect to="/post-my-thoughts/" />;
         return (
-            <div className="login">
-                <form
-                    onSubmit={this.handleSubmit.bind(this)}
-                    className="login-form"
-                >
-                    <div className="login-username-container">
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="email@test.ca"
-                            onChange={this.handleChange.bind(this)}
-                        />
+            <div className="signup l-container-full-screen">
+                <div className="l-container-full-screen filter-white">
+                    <div className="l-container-1080">
+                        <form
+                            onSubmit={this.handleSubmit.bind(this)}
+                            className="signup-form"
+                        >
+                            <h2 className="signup-title">New User</h2>
+
+                            <div className="signup-username-container form-box">
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder=" "
+                                    onChange={this.handleChange.bind(this)}
+                                    required
+                                />
+                                <label htmlFor="email">Email</label>
+                            </div>
+                            <div className="signup-first-name-container form-box">
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    placeholder=" "
+                                    onChange={this.handleChange.bind(this)}
+                                    required
+                                />
+                                <label htmlFor="firstName">First Name</label>
+                            </div>
+                            <div className="signup-last-name-container form-box">
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    placeholder=" "
+                                    onChange={this.handleChange.bind(this)}
+                                    required
+                                />
+                                <label htmlFor="lastName">Last Name</label>
+                            </div>
+                            <div className="signup-password-container form-box">
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder=" "
+                                    onChange={this.handleChange.bind(this)}
+                                    required
+                                />
+                                <label htmlFor="password">Password</label>
+                            </div>
+                            <button className="signup-btn">
+                                Create Account
+                            </button>
+                            {authError ? (
+                                <div className="error-message">{authError}</div>
+                            ) : null}
+                        </form>
                     </div>
-                    <div className="login-first-name-container">
-                        <label htmlFor="firstName">First Name</label>
-                        <input
-                            type="text"
-                            id="firstName"
-                            placeholder="Joe"
-                            onChange={this.handleChange.bind(this)}
-                        />
-                    </div>
-                    <div className="login-last-name-container">
-                        <label htmlFor="lastName">Last Name</label>
-                        <input
-                            type="text"
-                            id="lastName"
-                            placeholder="Smith"
-                            onChange={this.handleChange.bind(this)}
-                        />
-                    </div>
-                    <div className="login-password-container">
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            onChange={this.handleChange.bind(this)}
-                        />
-                    </div>
-                    <button className="login-btn">Signup</button>
-                    {authError ? <div>{authError}</div> : null}
-                </form>
+                </div>
             </div>
         );
     }

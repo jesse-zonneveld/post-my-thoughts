@@ -21,7 +21,7 @@ exports.thoughtCreated = functions.firestore
     .onCreate((doc) => {
         const thought = doc.data();
         const notification = {
-            content: "Added a new thought",
+            content: "added a new thought.",
             user: `${thought.authorFirstName} ${thought.authorLastName}`,
             time: admin.firestore.FieldValue.serverTimestamp(),
         };
@@ -38,7 +38,7 @@ exports.userJoined = functions.auth.user().onCreate((user) => {
         .then((doc) => {
             const newUser = doc.data();
             const notification = {
-                content: "New user joined!",
+                content: "has joined PostMyThoughts!",
                 user: `${newUser.firstName} ${newUser.lastName}`,
                 time: admin.firestore.FieldValue.serverTimestamp(),
             };

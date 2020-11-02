@@ -4,22 +4,40 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import moment from "moment";
+import { NavLink } from "react-router-dom";
 
 const ThoughtDetails = ({ thought, auth }) => {
     if (!auth.uid) return <Redirect to="/post-my-thoughts/login" />;
 
     if (thought) {
         return (
-            <div className="thought-details">
-                <div className="thought-title">{thought.title}</div>
-                <div className="thought-desc">{thought.content}</div>
-                <div className="author-and-date-container">
-                    <div className="author">
-                        Posted by {thought.authorFirstName}{" "}
-                        {thought.authorLastName}
-                    </div>
-                    <div className="date">
-                        {moment(thought.createdAt.toDate()).calendar()}
+            <div className="thought-details l-container-full-screen">
+                <div className="l-container-full-screen filter-white">
+                    <div className="l-container-1080">
+                        <div className="thought-container">
+                            <h2 className="thought-title">{thought.title}</h2>
+                            <div className="author-and-date">
+                                Posted by{" "}
+                                <span className="author">
+                                    {thought.authorFirstName}&nbsp;
+                                    {thought.authorLastName}
+                                </span>
+                                ,&nbsp;
+                                <span className="date">
+                                    {moment(
+                                        thought.createdAt.toDate()
+                                    ).calendar()}
+                                </span>
+                            </div>
+                            <div className="thought-content">
+                                {thought.content}
+                            </div>
+                            <NavLink to="/post-my-thoughts/">
+                                <button className="back-btn">
+                                    Back to Dashboard
+                                </button>
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </div>

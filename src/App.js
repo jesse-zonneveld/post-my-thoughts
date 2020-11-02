@@ -15,31 +15,30 @@ class App extends Component {
             <BrowserRouter>
                 <div className="app l-container-full-screen">
                     <Navbar />
-                    <div className="l-container-1080 main-content">
-                        <Switch>
-                            <Route
-                                exact
-                                path="/post-my-thoughts"
-                                component={Dashboard}
-                            />
-                            <Route
-                                path="/post-my-thoughts/thoughts/:id"
-                                component={ThoughtDetails}
-                            />
-                            <Route
-                                path="/post-my-thoughts/login"
-                                component={Login}
-                            />
-                            <Route
-                                path="/post-my-thoughts/signup"
-                                component={Signup}
-                            />
-                            <Route
-                                path="/post-my-thoughts/create-thought"
-                                component={CreateThought}
-                            />
-                        </Switch>
-                    </div>
+
+                    <Switch>
+                        <Route
+                            exact
+                            path="/post-my-thoughts"
+                            component={Dashboard}
+                        />
+                        <Route
+                            path="/post-my-thoughts/thoughts/:id"
+                            component={ThoughtDetails}
+                        />
+                        <Route
+                            path="/post-my-thoughts/login"
+                            component={Login}
+                        />
+                        <Route
+                            path="/post-my-thoughts/signup"
+                            component={Signup}
+                        />
+                        <Route
+                            path="/post-my-thoughts/create-thought"
+                            component={CreateThought}
+                        />
+                    </Switch>
                 </div>
             </BrowserRouter>
         );

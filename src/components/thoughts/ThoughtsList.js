@@ -5,11 +5,12 @@ import ThoughtSummary from "./ThoughtSummary";
 const ThoughtsList = ({ thoughts }) => {
     return (
         <div className="thoughts-list">
+            <h2 className="thoughts-list-title">Everyone's Thoughts</h2>
             {thoughts &&
                 thoughts.map((thought) => {
                     return (
                         <Link
-                            to={"post-my-thoughts/thoughts/" + thought.id}
+                            to={"/post-my-thoughts/thoughts/" + thought.id}
                             key={thought.id}
                         >
                             <ThoughtSummary thought={thought} />
